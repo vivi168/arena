@@ -1,5 +1,11 @@
 fr:
   fight:
+    actions:
+      miss: "Tous les deux manquent leur adversaire"
+      hit: "%{offense} frappe %{defense} pour [%{damage}] dégâts"
     errors:
       not_fighting_self: "Ne peut s'affronter lui même"
       winner_must_participate: "Le vainqueur doit avoir participé au combat"
+  fights:
+    show:
+      show_winner: "Afficher le vainqueur"

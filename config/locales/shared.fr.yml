@@ -1,5 +1,6 @@
 fr:
   edit: "Éditer"
+  details: "Détails"
   new_resource: "Ajouter %{resource}"
   edit_resource: "Éditer %{resource}"
   delete: "Supprimer"

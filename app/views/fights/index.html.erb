@@ -1,0 +1,24 @@
+<h1><%= Fight.model_name.human.pluralize %></h1>
+
+<table class="table table-responsive">
+  <thead>
+    <tr>
+      <th><%= Gladiator.human_attribute_name(:home) %></th>
+      <th><%= Gladiator.human_attribute_name(:away) %></th>
+      <th><%= Gladiator.human_attribute_name(:winner) %></th>
+      <th width="1"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @fights.each do |fight| %>
+      <tr>
+        <td><%= fight.home %></td>
+        <td><%= fight.away %></td>
+        <td><%= fight.winner %></td>
+        <td><%= link_to t(:details), fight_path(fight) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t(:go_back), root_path %>

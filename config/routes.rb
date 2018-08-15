@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   root to: 'arena#index'
   resources :gladiators
+  resources :fights
 
 end

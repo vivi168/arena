@@ -11,6 +11,10 @@ class Fight < ApplicationRecord
   validate :not_fighting_self
   validate :winner_must_participate
 
+  def to_s
+    "#{home} VS #{away}"
+  end
+
   private
 
   def not_fighting_self

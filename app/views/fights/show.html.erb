@@ -1,0 +1,23 @@
+<h1><%= @fight %></h1>
+
+<p>
+  <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#show_winner" aria-expanded="false" aria-controls="show_winner">
+    <%= t '.show_winner' %>
+  </button>
+</p>
+<div class="collapse" id="show_winner">
+  <div class="card card-body">
+    <%= @fight.winner %>
+  </div>
+</div>
+
+
+<h2><%= t :details %></h2>
+
+<ul>
+<% @fight.turns.each do |turn| %>
+  <li><%= t("fight.actions.#{turn.action}", offense: turn.offense, defense: turn.defense, damage: turn.damage) %></li>
+<% end %>
+</ul>
+
+<%= link_to t(:go_back), root_path %>
