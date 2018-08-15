@@ -1,0 +1,5 @@
+fr:
+  fight:
+    errors:
+      not_fighting_self: "Ne peut s'affronter lui même"
+      winner_must_participate: "Le vainqueur doit avoir participé au combat"

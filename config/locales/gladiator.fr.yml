@@ -1,0 +1,11 @@
+fr:
+  activerecord:
+    models:
+      gladiator: "Gladiateur"
+    attributes:
+      gladiator:
+        name: "Nom"
+        max_hp: "Points de vie"
+        stamina: "Endurance"
+        strength: "Force"
+        agility: "Agilité"

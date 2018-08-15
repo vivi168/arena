@@ -1,0 +1,14 @@
+fr:
+  edit: "Éditer"
+  new_resource: "Ajouter %{resource}"
+  edit_resource: "Éditer %{resource}"
+  delete: "Supprimer"
+  go_back: "Retour"
+  create_success: "Création réussie"
+  delete_success: "Suppression réussie"
+  update_success: "Mise à jour réussie"
+
+  formtastic:
+    actions:
+      create: "Créer"
+      update: "Mettre à jour"
