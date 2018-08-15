@@ -2,9 +2,9 @@ class Gladiator < ApplicationRecord
 
   before_create :compute_stats
 
-  has_many :home_fights, class_name: "Fight", foreign_key: :home
-  has_many :away_fights, class_name: "Fight", foreign_key: :away
-  has_many :won_fights, class_name: "Fight", foreign_key: :winner
+  has_many :home_fights, class_name: "Fight", foreign_key: :home, dependent: :nullify
+  has_many :away_fights, class_name: "Fight", foreign_key: :away, dependent: :nullify
+  has_many :won_fights, class_name: "Fight", foreign_key: :winner, dependent: :nullify
 
   validates :name, presence: true
 
