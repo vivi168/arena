@@ -37,15 +37,15 @@ class Fight < ApplicationRecord
       away_hit_chance = away.hit_chance
 
       if home_hit_chance == away_hit_chance
-        self.turns.build action: 'miss'
+        turns.build action: 'miss'
       elsif home_hit_chance > away_hit_chance
         dmg = home.damage
         away.current_hp -= dmg
-        self.turns.build action: 'hit', offense: home, defense: away, damage: dmg
+        turns.build action: 'hit', offense: home, defense: away, damage: dmg
       else
         dmg = away.damage
         home.current_hp -= dmg
-        self.turns.build action: 'hit', offense: away, defense: home, damage: dmg
+        turns.build action: 'hit', offense: away, defense: home, damage: dmg
       end
     end
 
