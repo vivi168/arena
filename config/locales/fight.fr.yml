@@ -1,4 +1,13 @@
 fr:
+  activerecord:
+    models:
+      fight: "Combat"
+    attributes:
+      fight:
+        home: "Domicile"
+        away: "Extérieur"
+        winner: "Vainqueur"
+
   fight:
     actions:
       miss: "Tous les deux manquent leur adversaire"
@@ -6,6 +15,9 @@ fr:
     errors:
       not_fighting_self: "Ne peut s'affronter lui même"
       winner_must_participate: "Le vainqueur doit avoir participé au combat"
+
   fights:
     show:
       show_winner: "Afficher le vainqueur"
+
+  new_fight: "Organiser un nouveau combat"
