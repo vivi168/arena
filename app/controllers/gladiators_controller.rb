@@ -30,7 +30,7 @@ class GladiatorsController < ApplicationController
   private
 
   def permitted_attrs
-    params.fetch(:gladiator, {}).permit(:name)
+    params.fetch(:gladiator, {}).permit(:name, :avatar)
   end
 
   def new_gladiator

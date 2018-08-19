@@ -66,3 +66,5 @@ gem 'bootstrap', '~> 4.1.3'
 
 gem 'formtastic'
 gem 'formtastic-bootstrap'
+
+gem "paperclip", "~> 6.0.0"
