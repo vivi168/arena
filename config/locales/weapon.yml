@@ -1,0 +1,4 @@
+fr:
+  weapon:
+    errors:
+      damage_in_range: "Damage low doit être inférieur à damage high"

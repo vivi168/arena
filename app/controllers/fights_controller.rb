@@ -15,7 +15,7 @@ class FightsController < ApplicationController
   private
 
   def permitted_attrs
-    params.fetch(:fight, {}).permit(:home_id, :away_id)
+    params.fetch(:fight, {}).permit(:home_id, :away_id, :home_weapon_id, :away_weapon_id)
   end
 
   def new_fight

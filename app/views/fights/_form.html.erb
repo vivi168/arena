@@ -1,6 +1,20 @@
 <%= semantic_form_for @fight do |f| %>
-  <%= f.input :home %>
-  <%= f.input :away %>
+  <div class="row">
+    <div class="col-md">
+      <%= f.input :home %>
+    </div>
+    <div class="col-md">
+      <%= f.input :home_weapon %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md">
+      <%= f.input :away %>
+    </div>
+    <div class="col-md">
+      <%= f.input :away_weapon %>
+    </div>
+  </div>
   <%= f.actions do %>
     <%= f.action :submit, as: :button, button_html: { class: 'btn btn-primary' } %>
   <% end %>

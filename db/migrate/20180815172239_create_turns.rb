@@ -3,10 +3,10 @@ class CreateTurns < ActiveRecord::Migration[5.2]
     create_table :turns do |t|
       t.string :action
 
-      t.references :fight
+      t.belongs_to :fight, index: true
 
-      t.references :offense
-      t.references :defense
+      t.belongs_to :offense, index: true
+      t.belongs_to :defense, index: true
       t.integer :damage
 
       t.timestamps

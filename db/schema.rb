@@ -10,16 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_15_172239) do
+ActiveRecord::Schema.define(version: 2018_08_19_085247) do
 
   create_table "fights", force: :cascade do |t|
     t.integer "home_id"
+    t.integer "home_weapon_id"
     t.integer "away_id"
+    t.integer "away_weapon_id"
     t.integer "winner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["away_id"], name: "index_fights_on_away_id"
+    t.index ["away_weapon_id"], name: "index_fights_on_away_weapon_id"
     t.index ["home_id"], name: "index_fights_on_home_id"
+    t.index ["home_weapon_id"], name: "index_fights_on_home_weapon_id"
     t.index ["winner_id"], name: "index_fights_on_winner_id"
   end
 
@@ -44,6 +48,13 @@ ActiveRecord::Schema.define(version: 2018_08_15_172239) do
     t.index ["defense_id"], name: "index_turns_on_defense_id"
     t.index ["fight_id"], name: "index_turns_on_fight_id"
     t.index ["offense_id"], name: "index_turns_on_offense_id"
+  end
+
+  create_table "weapons", force: :cascade do |t|
+    t.string "name"
+    t.integer "damage_low"
+    t.integer "damage_high"
+    t.integer "speed"
   end
 
 end
