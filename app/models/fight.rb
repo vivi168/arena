@@ -14,6 +14,11 @@ class Fight < ApplicationRecord
   validate :not_fighting_self
   validate :winner_must_participate
 
+  scope :fought_by, ->(gladiator) { where('home_id = :glad or away_id = :glad', glad: gladiator) }
+  scope :won_by, ->(gladiator) { where(winner: gladiator) }
+  scope :lost_by, ->(gladiator) { fought_by(gladiator).where.not(winner: gladiator) }
+  scope :by_date, -> { order(created_at: :desc) }
+
   def to_s
     "#{home} #{home_weapon.present? ? "[#{home_weapon}]" : ""} VS #{away} #{away_weapon.present? ? "[#{away_weapon}]" : ""}"
   end

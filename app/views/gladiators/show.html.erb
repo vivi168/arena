@@ -1,0 +1,46 @@
+<h1><%= @gladiator %></h1>
+
+<div class="row">
+
+  <div class="col-lg">
+    <ul>
+      <li><strong><%= t '.total_fights' %></strong>: <%= Fight.fought_by(@gladiator).count %></li>
+      <li><strong><%= t '.won_fights' %></strong>: <%= Fight.won_by(@gladiator).count %></li>
+      <li><strong><%= t '.lost_fights' %></strong>: <%= Fight.lost_by(@gladiator).count %></li>
+      <li><strong><%= t '.winrate' %></strong>: <%= number_to_percentage(Fight.won_by(@gladiator).count.to_f / Fight.fought_by(@gladiator).count * 100) %></li>
+    </ul>
+  </div>
+
+  <div class="col-lg">
+    <ul>
+      <li><strong><%= Gladiator.human_attribute_name(:max_hp) %></strong>: <%= @gladiator.max_hp %></li>
+      <li><strong><%= Gladiator.human_attribute_name(:stamina) %></strong>: <%= @gladiator.stamina %></li>
+      <li><strong><%= Gladiator.human_attribute_name(:strength) %></strong>: <%= @gladiator.strength %></li>
+      <li><strong><%= Gladiator.human_attribute_name(:agility) %></strong>: <%= @gladiator.agility %></li>
+    </ul>
+  </div>
+
+</div>
+
+<h2><%= t '.career' %></h2>
+
+<table class="table table-responsive">
+  <thead>
+    <tr>
+      <th>date</th>
+      <th>opponent</th>
+      <th>result</th>
+      <th width="1"></th>
+    </tr>
+  </thead>
+  <tbody>
+<% Fight.fought_by(@gladiator).by_date.each do |fight| %>
+  <tr>
+    <td><%= fight.created_at %></td>
+    <td><%= fight.home == @gladiator ? fight.away : fight.home %></td>
+    <td><%= fight.winner == @gladiator ? "W" : "L" %></td>
+    <td><%= link_to "View", fight_path(fight) %></td>
+  </tr>
+<% end %>
+  </tbody>
+</table>
