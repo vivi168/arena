@@ -1,0 +1,14 @@
+<table class="table table-responsive">
+  <thead>
+    <tr>
+      <%= render partial: "table_head" %>
+    </tr>
+  </thead>
+  <tbody>
+    <% collection.each do |item| %>
+      <tr>
+        <%= render partial: "table_fields", locals: { item: item } %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

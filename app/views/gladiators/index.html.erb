@@ -4,31 +4,6 @@
   <%= link_to t(:new_resource, resource: Gladiator.model_name.human), new_gladiator_path,  class: "btn btn-primary" %>
 </div>
 
-<table class="table table-responsive">
-  <thead>
-    <tr>
-      <th><%= Gladiator.human_attribute_name(:name) %></th>
-      <th><%= Gladiator.human_attribute_name(:max_hp) %></th>
-      <th><%= Gladiator.human_attribute_name(:stamina) %></th>
-      <th><%= Gladiator.human_attribute_name(:strength) %></th>
-      <th><%= Gladiator.human_attribute_name(:agility) %></th>
-      <th width="1"></th>
-      <th width="1"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @gladiators.each do |gladiator| %>
-      <tr>
-        <td><%= gladiator %></td>
-        <td><%= gladiator.max_hp %></td>
-        <td><%= gladiator.stamina %></td>
-        <td><%= gladiator.strength %></td>
-        <td><%= gladiator.agility %></td>
-        <td><%= link_to t(:edit), edit_gladiator_path(gladiator) %></td>
-        <td><%= link_to t(:delete), gladiator_path(gladiator), method: :delete %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= render partial: "shared/table", locals: { collection: @gladiators } %>
 
 <%= link_to t(:go_back), root_path %>
