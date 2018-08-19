@@ -5,7 +5,7 @@ fr:
     attributes:
       fight:
         away: "Extérieur"
-        away_weapon: "arme extérieur"
+        away_weapon: "Arme extérieur"
         home: "Domicile"
         home_weapon: "Arme domicile"
         winner: "Vainqueur"
