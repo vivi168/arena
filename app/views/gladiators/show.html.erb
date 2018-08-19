@@ -34,13 +34,13 @@
     </tr>
   </thead>
   <tbody>
-<% Fight.fought_by(@gladiator).by_date.each do |fight| %>
-  <tr>
-    <td><%= fight.created_at %></td>
-    <td><%= fight.home == @gladiator ? fight.away : fight.home %></td>
-    <td><%= fight.winner == @gladiator ? "W" : "L" %></td>
-    <td><%= link_to "View", fight_path(fight) %></td>
-  </tr>
-<% end %>
+    <% Fight.fought_by(@gladiator).by_date.each do |fight| %>
+      <tr>
+        <td><%= fight.created_at %></td>
+        <td><%= fight.home == @gladiator ? fight.away : fight.home %></td>
+        <td><%= fight.winner == @gladiator ? "W" : "L" %></td>
+        <td><%= link_to t(:details), fight_path(fight) %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>

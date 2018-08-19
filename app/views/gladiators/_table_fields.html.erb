@@ -3,5 +3,6 @@
 <td><%= item.stamina %></td>
 <td><%= item.strength %></td>
 <td><%= item.agility %></td>
+<td><%= link_to t(:details), gladiator_path(item) %></td>
 <td><%= link_to t(:edit), edit_gladiator_path(item) %></td>
 <td><%= link_to t(:delete), gladiator_path(item), method: :delete %></td>
