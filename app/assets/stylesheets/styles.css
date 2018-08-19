@@ -5,3 +5,23 @@
 .actions {
   margin-bottom: 20px;
 }
+
+a.win_lose {
+  background: #7faefd;
+  color: white !important;
+  font-size: 28px;
+  min-width: 30px;
+  height: 30px;
+  padding: 0 5px;
+  display: block;
+  text-align: center;
+  line-height: 30px;
+}
+a.win {
+  background: #080;
+  color: white !important;
+}
+a.loss {
+  background: #d65450;
+  color: white !important;
+}

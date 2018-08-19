@@ -2,12 +2,12 @@
 
 <div class="row">
 
-  <div class="col-lg">
-    <ul>
-      <li><strong><%= t '.total_fights' %></strong>: <%= Fight.fought_by(@gladiator).count %></li>
-      <li><strong><%= t '.won_fights' %></strong>: <%= Fight.won_by(@gladiator).count %></li>
-      <li><strong><%= t '.lost_fights' %></strong>: <%= Fight.lost_by(@gladiator).count %></li>
-      <li><strong><%= t '.winrate' %></strong>: <%= number_to_percentage(Fight.won_by(@gladiator).count.to_f / Fight.fought_by(@gladiator).count * 100) %></li>
+  <div class="col-lg-4">
+    <ul class="list-inline fight_history">
+      <li class="list-inline-item"><a title="<%= t '.total_fights' %>" class="win_lose"><%= Fight.fought_by(@gladiator).count %></a></li>
+      <li class="list-inline-item"><a title="<%= t '.won_fights' %>" class="win_lose win"><%= Fight.won_by(@gladiator).count %></a></li>
+      <li class="list-inline-item"><a title="<%= t '.lost_fights' %>" class="win_lose loss"><%= Fight.lost_by(@gladiator).count %></a></li>
+      <li class="list-inline-item"><a title="<%= t '.winrate' %>" class="win_lose"><%= number_to_percentage(Fight.won_by(@gladiator).count.to_f / Fight.fought_by(@gladiator).count * 100) %></a></li>
     </ul>
   </div>
 
@@ -27,9 +27,9 @@
 <table class="table table-responsive">
   <thead>
     <tr>
-      <th>date</th>
-      <th>opponent</th>
-      <th>result</th>
+      <th><%= t('.fight.date') %></th>
+      <th><%= t('.fight.opponent') %></th>
+      <th><%= t('.fight.result') %></th>
       <th width="1"></th>
     </tr>
   </thead>
@@ -38,7 +38,7 @@
       <tr>
         <td><%= fight.created_at %></td>
         <td><%= fight.home == @gladiator ? fight.away : fight.home %></td>
-        <td><%= fight.winner == @gladiator ? "W" : "L" %></td>
+        <td><a class="win_lose <%= fight.winner == @gladiator ? "win" : "loss" %>"><%= fight.winner == @gladiator ? "W" : "L" %></a></td>
         <td><%= link_to t(:details), fight_path(fight) %></td>
       </tr>
     <% end %>

@@ -9,3 +9,13 @@ fr:
         stamina: "Endurance"
         strength: "Force"
         agility: "Agilité"
+  gladiators:
+    show:
+      fight:
+        date: "Date"
+        opponent: "Adversaire"
+        result: "Résultat"
+      lost_fights: "Combats perdus"
+      total_fights: "Nombre de combats"
+      winrate: "Pourcentage de victoire"
+      won_fights: "Combats gagnés"
